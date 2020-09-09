@@ -15,8 +15,7 @@
 apiVersion: security.istio.io/v1beta1
 kind: AuthorizationPolicy
 metadata:
- name: store-out-of-scope
- namespace: store-out-of-scope
+ name: auth-policy-out-of-scope
 spec:
   action: ALLOW
   rules:
