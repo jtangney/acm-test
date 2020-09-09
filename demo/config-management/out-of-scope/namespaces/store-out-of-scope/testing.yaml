@@ -11,6 +11,7 @@ spec:
   http:
   - route:
     - destination:
-        host: nginx.store-out-of-scope.svc.cluster.local
+#        host: nginx.store-out-of-scope.svc.cluster.local
+        host: currencyservice.store-out-of-scope.svc.cluster.local
         port:
-          number: 80
+          number: 7000
