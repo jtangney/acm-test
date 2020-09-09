@@ -10,7 +10,6 @@ spec:
   http:
   - route:
     - destination:
-#        host: frontend.store-in-scope.svc.cluster.local
-        host: nginx.store-in-scope.svc.cluster.local
+        host: frontend.store-in-scope.svc.cluster.local
         port:
           number: 80
