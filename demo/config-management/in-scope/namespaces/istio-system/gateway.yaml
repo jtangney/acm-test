@@ -6,7 +6,6 @@ metadata:
 spec:
   selector:
     istio: ingressgateway
-#    istio: istio-ingressgateway-onprem
   servers:
    - port:
        number: 443
@@ -20,7 +19,7 @@ spec:
    - port:
        number: 80
        protocol: HTTP
-       name: http
+       name: http2
      hosts:
      - "*"
 
