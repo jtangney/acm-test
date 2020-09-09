@@ -16,12 +16,12 @@ spec:
        credentialName: exampleboutique-credential
      hosts:
      - "*"
-   - port:
-       number: 80
-       protocol: HTTP
-       name: http2
-     hosts:
-     - "*"
+#   - port:
+#       number: 80
+#       protocol: HTTP
+#       name: http2
+#     hosts:
+#     - "*"
 
 ---
 apiVersion: networking.istio.io/v1alpha3
