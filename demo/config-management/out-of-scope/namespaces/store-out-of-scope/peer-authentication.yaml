@@ -12,12 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-kind: ResourceQuota
-apiVersion: v1
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
 metadata:
-  name: zero-quota
+  name: default
 spec:
-  hard:
-    # 0 here enforces that no workloads are run in this namespace.
-    # For store-out-of-scope we want Services only for name resolution.
-    pods: 0
+  mtls:
+    mode: STRICT
