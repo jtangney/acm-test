@@ -20,4 +20,4 @@ spec:
   hard:
     # 0 here enforces that no workloads are run in this namespace
     # only services need to be present
-    pods: "0"
+    pods: 0
