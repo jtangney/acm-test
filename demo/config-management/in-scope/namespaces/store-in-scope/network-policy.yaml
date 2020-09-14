@@ -12,7 +12,11 @@ spec:
     - podSelector: {}
   # allow all egress
   egress:
-  - {}
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          name: store-out-of-scope
+
 #  - to: []
 #    - podSelector: {}
 
