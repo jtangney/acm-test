@@ -10,11 +10,11 @@ spec:
   ingress:
   - from:
     - podSelector: {}
-  # allow all egress
   egress:
   - to:
-    - ipBlock:
-        cidr: 21.0.204.245/32
+    - podSelector: {}
+#    - ipBlock:
+#        cidr: 21.0.204.245/32
 #    - namespaceSelector:
 #        matchLabels:
 #          name: store-out-of-scope
@@ -22,23 +22,19 @@ spec:
 #  - to: []
 #    - podSelector: {}
 
-#---
-#kind: NetworkPolicy
-#apiVersion: networking.k8s.io/v1
-#metadata:
-#  name: allow-egress-to-out-of-scope
-#spec:
-#  podSelector:
-#    matchLabels:
-#      app: frontend
-#  policyTypes:
-#  - Egress
-#  egress:
-#  - to: []
-
-#    - namespaceSelector:
-#        matchLabels:
-#          name: store-out-of-scope
+---
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: allow-egress-to-out-of-scope
+spec:
+  podSelector: {}
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    - ipBlock:
+        cidr: 21.0.204.245/32
 
 #---
 #kind: NetworkPolicy
