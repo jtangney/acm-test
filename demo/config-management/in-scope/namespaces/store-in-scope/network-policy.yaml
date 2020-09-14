@@ -14,18 +14,18 @@ spec:
   - to:
     - podSelector: {}
 
----
-kind: NetworkPolicy
-apiVersion: networking.k8s.io/v1
-metadata:
-  name: frontend-allow-external
-spec:
-  podSelector:
-    matchLabels:
-      app: frontend
-  policyTypes:
-  - Ingress
-  ingress:
-  - from: []
-##    ports:
-##    - port: 8080
+#---
+#kind: NetworkPolicy
+#apiVersion: networking.k8s.io/v1
+#metadata:
+#  name: frontend-allow-external
+#spec:
+#  podSelector:
+#    matchLabels:
+#      app: frontend
+#  policyTypes:
+#  - Ingress
+#  ingress:
+#  - from: []
+###    ports:
+###    - port: 8080
