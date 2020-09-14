@@ -14,6 +14,21 @@ spec:
   - to:
     - podSelector: {}
 
+---
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: allow-egress-to-out-of-scope
+spec:
+  podSelector: {}
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          name: store-out-of-scope
+
 #---
 #kind: NetworkPolicy
 #apiVersion: networking.k8s.io/v1
