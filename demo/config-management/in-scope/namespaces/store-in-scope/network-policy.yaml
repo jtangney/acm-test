@@ -20,3 +20,5 @@ spec:
       app: frontend
   ingress:
   - from: []
+    ports:
+    - port: 80
