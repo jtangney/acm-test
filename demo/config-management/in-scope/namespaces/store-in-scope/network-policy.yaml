@@ -13,9 +13,11 @@ spec:
   # allow all egress
   egress:
   - to:
-    - namespaceSelector:
-        matchLabels:
-          name: store-out-of-scope
+    - ipBlock:
+        cidr: 21.0.204.245/32
+#    - namespaceSelector:
+#        matchLabels:
+#          name: store-out-of-scope
 
 #  - to: []
 #    - podSelector: {}
