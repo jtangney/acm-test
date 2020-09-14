@@ -6,7 +6,8 @@ spec:
   podSelector: {}
 #    matchLabels:
   policyTypes:
-    - Ingress
+  - Ingress
+  - Egress
 #  ingress:
 #  - from:
 #    - podSelector: {}
