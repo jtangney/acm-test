@@ -44,6 +44,15 @@ spec:
   - to:
     - ipBlock:
         cidr: 21.0.204.245/32
+    - namespaceSelector:
+        matchLabels:
+          name: store-in-scope
+    - namespaceSelector:
+        matchLabels:
+          name: store-out-of-scope
+#    - namespaceSelector:
+#        matchLabels:
+#          name: store-out-of-scope
 #    - podSelector:
 #        matchLabels:
 #          app: paymentservice
