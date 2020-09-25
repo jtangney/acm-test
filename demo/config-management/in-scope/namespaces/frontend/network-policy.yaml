@@ -12,7 +12,7 @@ spec:
     - podSelector: {}
   egress:
   - to:
-#    - podSelector: {}
+    - podSelector: {}
 #    - ipBlock:
 #        cidr: 21.0.204.245/32
 #    - namespaceSelector:
