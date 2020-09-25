@@ -15,6 +15,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
+  name: store-out-of-scope
   labels:
     istio-injection: enabled
     name: store-out-of-scope
