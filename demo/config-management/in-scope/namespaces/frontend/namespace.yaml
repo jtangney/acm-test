@@ -12,14 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Policy to only allow requests from frontend, or from own store-in-scope namespace
-apiVersion: security.istio.io/v1beta1
-kind: AuthorizationPolicy
+apiVersion: v1
+kind: Namespace
 metadata:
- name: auth-policy-in-scope
-spec:
-  action: ALLOW
-  rules:
-  - from:
-    - source:
-        namespaces: ["frontend", "store-in-scope"]
+  name: frontend
+  labels:
+    istio-injection: enabled

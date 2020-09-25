@@ -12,14 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Policy to only allow requests from frontend, or from own store-in-scope namespace
+# Policy to allow all requests to Frontend
+# This supercedes the below rule for Frontend only.
 apiVersion: security.istio.io/v1beta1
 kind: AuthorizationPolicy
 metadata:
- name: auth-policy-in-scope
+ name: auth-policy-allow-frontend
 spec:
   action: ALLOW
+  selector:
+   matchLabels:
+     app: frontend
   rules:
-  - from:
-    - source:
-        namespaces: ["frontend", "store-in-scope"]
+  - {}

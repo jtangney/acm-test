@@ -6,11 +6,10 @@ spec:
   hosts:
   - "*"
   gateways:
-#  - istio-system/istio-ingressgateway
   - store-in-scope/istio-ingressgateway
   http:
   - route:
     - destination:
-        host: frontend.store-in-scope.svc.cluster.local
+        host: frontend.frontend.svc.cluster.local
         port:
           number: 80
