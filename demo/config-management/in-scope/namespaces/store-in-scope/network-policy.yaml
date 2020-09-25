@@ -59,4 +59,4 @@ spec:
   - from:
     - podSelector:
         matchLabels:
-          app: frontend
+          app: checkoutservice
