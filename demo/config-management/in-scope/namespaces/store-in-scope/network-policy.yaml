@@ -45,11 +45,12 @@ spec:
     - ipBlock:
         cidr: 21.0.204.245/32
     - podSelector:
-        matchLabels:
-          app: paymentservice
-    - podSelector:
-        matchLabels:
-          app: frontend
+        {}
+#        matchLabels:
+#          app: paymentservice
+#    - podSelector:
+#        matchLabels:
+#          app: frontend
 
 ---
 kind: NetworkPolicy
