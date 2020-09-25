@@ -41,7 +41,7 @@ spec:
         matchLabels:
           app: frontend
   egress:
-  - to: {}
+  - to: []
 #    - ipBlock:
 #        cidr: 21.0.204.245/32
 #    - podSelector:
