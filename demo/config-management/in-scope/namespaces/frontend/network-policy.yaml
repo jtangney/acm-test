@@ -3,10 +3,10 @@ apiVersion: networking.k8s.io/v1
 metadata:
   name: default-deny-all
 spec:
+  podSelector: {}
   policyTypes:
   - Ingress
   - Egress
-  podSelector: {}
 
 ---
 kind: NetworkPolicy
@@ -21,6 +21,26 @@ spec:
   - Ingress
   ingress:
   - from: []
+
+---
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: frontend-allow-egress-store-in-scope
+spec:
+  podSelector:
+    matchLabels:
+      app: frontend
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          name: store-in-scope
+
+#  - to: []
+#    - podSelector: {}
 
 #---
 #kind: NetworkPolicy
