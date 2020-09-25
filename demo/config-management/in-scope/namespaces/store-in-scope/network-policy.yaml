@@ -47,6 +47,9 @@ spec:
     - podSelector:
         matchLabels:
           app: paymentservice
+    - podSelector:
+        matchLabels:
+          app: frontend
 
 ---
 kind: NetworkPolicy
