@@ -8,6 +8,20 @@ spec:
   - Egress
   podSelector: {}
 
+---
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: frontend-allow-external
+spec:
+  podSelector:
+    matchLabels:
+      app: frontend
+  policyTypes:
+  - Ingress
+  ingress:
+  - from: []
+
 #---
 #kind: NetworkPolicy
 #apiVersion: networking.k8s.io/v1
