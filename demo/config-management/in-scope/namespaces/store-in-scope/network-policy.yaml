@@ -35,10 +35,10 @@ spec:
   - Ingress
   - Egress
   ingress:
-  - from:
-    - podSelector:
-        matchLabels:
-          app: frontend
+  - from: []
+#    - podSelector:
+#        matchLabels:
+#          app: frontend
   egress:
   - to:
     - ipBlock:
@@ -59,7 +59,7 @@ spec:
   policyTypes:
   - Ingress
   ingress:
-  - from:
-    - podSelector:
-        matchLabels:
-          app: checkoutservice
+  - from: []
+#    - podSelector:
+#        matchLabels:
+#          app: checkoutservice
