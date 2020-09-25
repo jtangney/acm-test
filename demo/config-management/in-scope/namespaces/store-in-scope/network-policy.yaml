@@ -50,12 +50,9 @@ spec:
     - namespaceSelector:
         matchLabels:
           name: store-out-of-scope
-    - namespaceSelector:
-        matchLabels:
-          name: kube-system
 #    - namespaceSelector:
 #        matchLabels:
-#          name: store-out-of-scope
+#          name: kube-system
 #    - podSelector:
 #        matchLabels:
 #          app: paymentservice
