@@ -36,7 +36,10 @@ spec:
   - Ingress
   - Egress
   ingress:
-  - from: []
+  - from:
+    - podSelector:
+        matchLabels:
+          app: frontend
   egress:
   - to: []
 
