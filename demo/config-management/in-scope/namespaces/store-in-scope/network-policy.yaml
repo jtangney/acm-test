@@ -29,7 +29,9 @@ apiVersion: networking.k8s.io/v1
 metadata:
   name: checkout-allow-ingress-frontend-egress-lb
 spec:
-  podSelector: {}
+  podSelector:
+    matchLabels:
+      app: checkoutservice
   policyTypes:
   - Ingress
   - Egress
@@ -37,20 +39,20 @@ spec:
   - from: []
   egress:
   - to: []
-#
-#---
-#kind: NetworkPolicy
-#apiVersion: networking.k8s.io/v1
-#metadata:
-#  name: payment-allow-ingress-checkout
-#spec:
-#  podSelector:
-#    matchLabels:
-#      app: paymentservice
-#  policyTypes:
-#  - Ingress
-#  ingress:
-#  - from: []
-##    - podSelector:
-##        matchLabels:
-##          app: checkoutservice
+
+---
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: payment-allow-ingress-frontend-egress-lb
+spec:
+  podSelector:
+    matchLabels:
+      app: paymentservice
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from: []
+  egress:
+  - to: []
