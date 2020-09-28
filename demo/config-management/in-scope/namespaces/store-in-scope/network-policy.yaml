@@ -102,15 +102,8 @@ spec:
       app: paymentservice
   policyTypes:
   - Ingress
-  - Egress
   ingress:
-  - from: []
-  egress:
-  - to: []
-#  policyTypes:
-#  - Ingress
-#  ingress:
-#  - from:
-#    - podSelector:
-#        matchLabels:
-#          app: checkoutservice
+  - from:
+    - podSelector:
+        matchLabels:
+          app: checkoutservice
