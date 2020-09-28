@@ -36,6 +36,9 @@ spec:
     - namespaceSelector:
         matchLabels:
           name: kube-system
+    - namespaceSelector:
+        matchLabels:
+          name: istio-system
 
 ---
 kind: NetworkPolicy
