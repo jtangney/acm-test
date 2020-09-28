@@ -77,7 +77,10 @@ spec:
   - Egress
   ingress:
   - from:
-    - podSelector:
+    - namespaceSelector:
+        matchLabels:
+          name: frontend
+      podSelector:
         matchLabels:
           app: frontend
   egress:
