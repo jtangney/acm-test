@@ -85,7 +85,7 @@ spec:
       app: frontend
   policyTypes:
   - Egress
-  eggress:
+  egress:
   - to: []
 
 ---
