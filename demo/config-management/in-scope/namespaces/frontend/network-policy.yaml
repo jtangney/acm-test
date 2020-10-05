@@ -78,6 +78,20 @@ spec:
 kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
 metadata:
+  name: frontend-allow-egress-temporary
+spec:
+  podSelector:
+    matchLabels:
+      app: frontend
+  policyTypes:
+  - Eggress
+  ingress:
+  - to: []
+
+---
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
   name: frontend-allow-egress-store-and-lb
 spec:
   podSelector:
