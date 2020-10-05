@@ -84,8 +84,8 @@ spec:
     matchLabels:
       app: frontend
   policyTypes:
-  - Eggress
-  ingress:
+  - Egress
+  eggress:
   - to: []
 
 ---
