@@ -36,9 +36,6 @@ spec:
     - namespaceSelector:
         matchLabels:
           name: kube-system
-      podSelector:
-        matchLabels:
-          k8s-app: kube-dns
       ports:
         - protocol: TCP
           port: 53
@@ -86,7 +83,7 @@ spec:
   egress:
   - to:
     - ipBlock:
-        cidr: 21.0.204.245/32
+        cidr: 21.0.197.100/32
     - podSelector:
         matchLabels:
           app: paymentservice
