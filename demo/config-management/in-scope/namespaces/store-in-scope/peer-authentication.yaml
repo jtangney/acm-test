@@ -18,4 +18,4 @@ metadata:
   name: testing-auth-policy-enforce
 spec:
   mtls:
-    mode: PERMISSIVE
+    mode: STRICT
