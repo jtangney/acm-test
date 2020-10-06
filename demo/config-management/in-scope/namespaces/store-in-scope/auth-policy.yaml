@@ -25,9 +25,6 @@ spec:
      app: frontend
   rules:
   - {}
-#  - to:
-#    - operation:
-#        methods: ["GET", "POST"]
 
 ---
 # Policy to only allow requests from store-in-scope namespace
