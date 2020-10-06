@@ -6,7 +6,6 @@ spec:
   hosts:
   - "*"
   gateways:
-#  - istio-system/istio-ingressgateway
   - store-in-scope/istio-ingressgateway
   http:
   - route:

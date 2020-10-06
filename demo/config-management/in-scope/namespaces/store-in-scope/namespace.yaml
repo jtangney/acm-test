@@ -18,3 +18,4 @@ metadata:
   name: store-in-scope
   labels:
     istio-injection: enabled
+    name: store-in-scope
