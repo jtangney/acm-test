@@ -37,4 +37,7 @@ spec:
   rules:
   - from:
     - source:
+        # only requests from this namespace
         namespaces: ["store-in-scope"]
+        # and must be authenticated
+        principals: ["*"]
