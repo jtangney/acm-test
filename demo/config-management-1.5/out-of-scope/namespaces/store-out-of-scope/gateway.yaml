@@ -14,3 +14,9 @@ spec:
       mode: AUTO_PASSTHROUGH
     hosts:
     - "*.local"
+  - port:
+      number: 80
+      protocol: HTTP
+      name: http
+    hosts:
+      - "*"
