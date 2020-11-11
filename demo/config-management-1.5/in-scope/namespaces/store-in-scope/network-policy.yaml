@@ -88,7 +88,7 @@ spec:
         matchLabels:
           app: checkoutservice
     - ipBlock:
-        cidr: 21.0.197.100/32
+        cidr: 172.16.3.31/32
 
 ---
 kind: NetworkPolicy
@@ -110,7 +110,7 @@ spec:
   egress:
   - to:
     - ipBlock:
-        cidr: 21.0.197.100/32
+        cidr: 172.16.3.31/32
     - podSelector:
         matchLabels:
           app: paymentservice
