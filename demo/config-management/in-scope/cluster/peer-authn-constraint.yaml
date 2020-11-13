@@ -24,3 +24,39 @@ spec:
       - apiGroups: ["security.istio.io"]
         kinds: ["PeerAuthentication"]
     namespaces: ["store-in-scope"]
+
+---
+# see https://cloud.google.com/anthos-config-management/docs/how-to/using-constraints-to-enforce-pod-security
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPPrivilegedContainer
+metadata:
+  name: psp-privileged-container
+spec:
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+
+---
+# see https://cloud.google.com/anthos-config-management/docs/how-to/using-constraints-to-enforce-pod-security
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPReadOnlyRootFilesystem
+metadata:
+  name: psp-readonlyrootfilesystem
+spec:
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+
+---
+# see https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/general/block-nodeport-services
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sBlockNodePort
+metadata:
+  name: block-node-port
+spec:
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Service"]
