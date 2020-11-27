@@ -14,21 +14,21 @@
 
 # Policy to allow all requests to Frontend
 # This supercedes the below rule for Frontend only.
-apiVersion: security.istio.io/v1beta1
-kind: AuthorizationPolicy
-metadata:
- name: auth-policy-allow-frontend
-spec:
-  action: ALLOW
-  selector:
-   matchLabels:
-     app: frontend
-  rules:
-  - from:
-    - source:
-        # and must be authenticated
-        principals: ["*"]
----
+#apiVersion: security.istio.io/v1beta1
+#kind: AuthorizationPolicy
+#metadata:
+# name: auth-policy-allow-frontend
+#spec:
+#  action: ALLOW
+#  selector:
+#   matchLabels:
+#     app: frontend
+#  rules:
+#  - from:
+#    - source:
+#        # and must be authenticated
+#        principals: ["*"]
+#---
 # Policy to only allow requests from store-in-scope namespace
 apiVersion: security.istio.io/v1beta1
 kind: AuthorizationPolicy
