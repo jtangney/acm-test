@@ -24,8 +24,10 @@ spec:
    matchLabels:
      app: frontend
   rules:
-  - {}
-
+  - from:
+    - source:
+        # and must be authenticated
+        principals: ["*"]
 ---
 # Policy to only allow requests from store-in-scope namespace
 apiVersion: security.istio.io/v1beta1
