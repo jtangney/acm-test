@@ -16,12 +16,10 @@
 apiVersion: security.istio.io/v1beta1
 kind: AuthorizationPolicy
 metadata:
- name: auth-policy-allow-frontend
+ name: default-deny-unauthenticated
 spec:
   action: ALLOW
   selector:
-   matchLabels:
-     app: frontend
   rules:
   - from:
     - source:
