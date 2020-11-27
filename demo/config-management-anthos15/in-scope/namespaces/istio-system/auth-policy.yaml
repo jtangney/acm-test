@@ -18,9 +18,9 @@ kind: AuthorizationPolicy
 metadata:
  name: default-deny-unauthenticated
 spec:
-  action: ALLOW
+  action: DENY
   selector:
   rules:
   - from:
     - source:
-        principals: ["*"]
+        notPrincipals: ["*"]
