@@ -23,7 +23,7 @@ spec:
     kinds:
       - apiGroups: ["security.istio.io"]
         kinds: ["PeerAuthentication"]
-    namespaces: ["store-in-scope"]
+#    namespaces: ["store-in-scope"]
 
 ---
 # see https://cloud.google.com/anthos-config-management/docs/how-to/using-constraints-to-enforce-pod-security
