@@ -40,3 +40,4 @@ spec:
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
+    excludedNamespaces: ["istio-system"]
