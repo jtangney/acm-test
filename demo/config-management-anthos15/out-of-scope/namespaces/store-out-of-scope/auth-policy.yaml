@@ -21,4 +21,4 @@ spec:
   rules:
   - from:
     - source:
-        namespaces: ["frontend", "store-in-scope", "store-out-of-scope"]
+        namespaces: ["store-in-scope", "store-out-of-scope"]
