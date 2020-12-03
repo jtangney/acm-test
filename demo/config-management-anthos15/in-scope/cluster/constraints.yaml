@@ -40,19 +40,6 @@ spec:
     excludedNamespaces: ["istio-system", "kube-system"]
 
 ---
-# see https://cloud.google.com/anthos-config-management/docs/how-to/using-constraints-to-enforce-pod-security
-apiVersion: constraints.gatekeeper.sh/v1beta1
-kind: K8sPSPReadOnlyRootFilesystem
-metadata:
-  name: psp-readonlyrootfilesystem
-spec:
-  match:
-    kinds:
-      - apiGroups: [""]
-        kinds: ["Pod"]
-    excludedNamespaces: ["istio-system", "kube-system"]
-
----
 # see https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/general/block-nodeport-services
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sBlockNodePort
