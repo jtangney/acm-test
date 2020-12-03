@@ -18,4 +18,4 @@ metadata:
   name: default-strict-mtls
 spec:
   mtls:
-    mode: PERMISSIVE
+    mode: STRICT
