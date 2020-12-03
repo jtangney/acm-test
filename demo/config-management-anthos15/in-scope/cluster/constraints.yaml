@@ -24,7 +24,7 @@ spec:
     kinds:
       - apiGroups: ["security.istio.io"]
         kinds: ["PeerAuthentication"]
-    excludedNamespaces: ["istio-system"]
+#    excludedNamespaces: ["istio-system"]
 
 ---
 # see https://cloud.google.com/anthos-config-management/docs/how-to/using-constraints-to-enforce-pod-security
@@ -37,7 +37,6 @@ spec:
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
-#    excludedNamespaces: ["istio-system", "kube-system"]
 
 ---
 # see https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/general/block-nodeport-services
