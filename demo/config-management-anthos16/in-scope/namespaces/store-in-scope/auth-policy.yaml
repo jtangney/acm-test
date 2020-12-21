@@ -1,0 +1,45 @@
+# Copyright 2020 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Policy to allow requests to Frontend from ingressgateway.
+# Applied in addtion to the policy below.
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+ name: frontend-allow-from-ingressgateway
+spec:
+  action: ALLOW
+  selector:
+   matchLabels:
+     app: frontend
+  rules:
+  - from:
+    - source:
+        principals: ["cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account"]
+---
+# Policy to only allow requests from services within the store-in-scope namespace.
+# Applies to all workloads in the namespace.
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+ name: auth-policy-in-scope
+spec:
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        # only requests from this namespace
+        namespaces: ["store-in-scope"]
+        # and must be authenticated
+        principals: ["*"]
