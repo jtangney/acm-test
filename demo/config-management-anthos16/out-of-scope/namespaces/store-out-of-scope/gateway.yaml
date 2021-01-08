@@ -4,7 +4,8 @@ metadata:
   name: cross-network-gateway
 spec:
   selector:
-    istio: eastwestgateway
+#    istio: eastwestgateway
+    app: istio-eastwestgateway
   servers:
   - port:
       number: 443
