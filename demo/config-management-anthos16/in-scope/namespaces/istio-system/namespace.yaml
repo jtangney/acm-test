@@ -18,4 +18,5 @@ metadata:
   name: istio-system
   labels:
     name: istio-system
+    newlabel: test
     topology.istio.io/network: in-scope-network
