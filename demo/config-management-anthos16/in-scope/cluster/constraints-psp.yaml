@@ -13,13 +13,14 @@
 # limitations under the License.
 
 #
+# See https://cloud.google.com/anthos-config-management/docs/how-to/using-constraints-to-enforce-pod-security.
+#
 # This file contains a subset of contraints that implement PodSecurityPolicy as an example.
 # See the full set of constraints that implement PodSecurityPolicy at
 # https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/pod-security-policy
 #
 
-# Prevent privileged containers
-# See https://cloud.google.com/anthos-config-management/docs/how-to/using-constraints-to-enforce-pod-security
+# See https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/pod-security-policy/privileged-containers
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sPSPPrivilegedContainer
 metadata:
@@ -31,6 +32,7 @@ spec:
         kinds: ["Pod"]
 
 ---
+# See https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/pod-security-policy/allow-privilege-escalation
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sPSPAllowPrivilegeEscalationContainer
 metadata:
