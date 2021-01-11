@@ -4,7 +4,6 @@ metadata:
   name: cross-network-gateway
 spec:
   selector:
-#    istio: eastwestgateway
     app: istio-eastwestgateway
   servers:
   - port:
